@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Battery module and pack test system illustration">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#12263F"/><stop offset="1" stop-color="#0A1628"/>
+    </linearGradient>
+    <linearGradient id="scr" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0B1B33"/><stop offset="1" stop-color="#0A1628"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#1E6EF7"/><stop offset="1" stop-color="#4FC3F7"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" rx="18" fill="url(#bg)"/>
+  <g stroke="#FFFFFF" stroke-opacity=".045">
+    <path d="M0 60h400M0 120h400M0 180h400M0 240h400M60 0v300M120 0v300M180 0v300M240 0v300M300 0v300M360 0v300"/>
+  </g>
+  <!-- battery pack -->
+  <g transform="translate(52 78)">
+    <rect x="0" y="0" width="196" height="110" rx="12" fill="#132844" stroke="#4FC3F7" stroke-opacity=".5" stroke-width="1.5"/>
+    <!-- cells -->
+    <g fill="#0E2440" stroke="#2A4A7A">
+      <rect x="14" y="16" width="22" height="78" rx="5"/><rect x="42" y="16" width="22" height="78" rx="5"/>
+      <rect x="70" y="16" width="22" height="78" rx="5"/><rect x="98" y="16" width="22" height="78" rx="5"/>
+      <rect x="126" y="16" width="22" height="78" rx="5"/><rect x="154" y="16" width="22" height="78" rx="5"/>
+    </g>
+    <!-- busbars -->
+    <rect x="14" y="10" width="162" height="8" rx="3" fill="#F59E0B" opacity=".85"/>
+    <rect x="14" y="92" width="162" height="8" rx="3" fill="#1E6EF7" opacity=".85"/>
+    <rect x="14" y="60" width="4" height="32" fill="#F59E0B"/><rect x="172" y="60" width="4" height="32" fill="#F59E0B"/>
+    <text x="98" y="78" font-family="Arial" font-size="9" fill="#C7D6EC" text-anchor="middle">96S  PACK</text>
+  </g>
+  <!-- test rack -->
+  <rect x="262" y="48" width="86" height="150" rx="10" fill="#132844" stroke="#1E6EF7" stroke-opacity=".55" stroke-width="1.5"/>
+  <rect x="272" y="58" width="66" height="44" rx="6" fill="url(#scr)" stroke="#2A4A7A"/>
+  <text x="282" y="74" font-family="Arial" font-size="8" fill="#5B7DA6">PACK TEST</text>
+  <text x="282" y="94" font-family="Arial" font-size="13" font-weight="bold" fill="#4FC3F7">600V / 300A</text>
+  <g font-family="Arial" font-size="7" fill="#7D93B4">
+    <rect x="272" y="112" width="66" height="14" rx="4" fill="#0E2440" stroke="#2A4A7A"/><text x="305" y="122" text-anchor="middle">OCV / IR</text>
+    <rect x="272" y="132" width="66" height="14" rx="4" fill="#0E2440" stroke="#2A4A7A"/><text x="305" y="142" text-anchor="middle">HI-POT</text>
+    <rect x="272" y="152" width="66" height="14" rx="4" fill="#0E2440" stroke="#2A4A7A"/><text x="305" y="162" text-anchor="middle">BMS CAN</text>
+    <rect x="272" y="172" width="66" height="14" rx="4" fill="#0E2440" stroke="#2A4A7A"/><text x="305" y="182" text-anchor="middle">EOL CYCLE</text>
+  </g>
+  <!-- cables -->
+  <path d="M248 98c-14 0-14 20-30 20" fill="none" stroke="#DC2626" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M248 130c-14 0-14-20-30-20" fill="none" stroke="#3B82F6" stroke-width="3.5" stroke-linecap="round"/>
+  <text x="52" y="224" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#E3EEFF" letter-spacing="2">VT-MP  MODULE / PACK TEST SYSTEM</text>
+</svg>

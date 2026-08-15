@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Electrical safety test equipment illustration">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#12263F"/><stop offset="1" stop-color="#0A1628"/>
+    </linearGradient>
+    <linearGradient id="scr" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0B1B33"/><stop offset="1" stop-color="#0A1628"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" rx="18" fill="url(#bg)"/>
+  <g stroke="#FFFFFF" stroke-opacity=".045">
+    <path d="M0 60h400M0 120h400M0 180h400M0 240h400M60 0v300M120 0v300M180 0v300M240 0v300M300 0v300M360 0v300"/>
+  </g>
+  <!-- tester body -->
+  <rect x="60" y="40" width="190" height="200" rx="12" fill="#132844" stroke="#1E6EF7" stroke-opacity=".55" stroke-width="1.5"/>
+  <rect x="74" y="54" width="162" height="76" rx="7" fill="url(#scr)" stroke="#2A4A7A"/>
+  <text x="84" y="74" font-family="Arial, sans-serif" font-size="9" fill="#5B7DA6">HI-POT  5kV AC / 6kV DC</text>
+  <text x="84" y="106" font-family="Arial, sans-serif" font-size="26" font-weight="bold" fill="#F59E0B">4.82</text>
+  <text x="138" y="106" font-family="Arial, sans-serif" font-size="12" fill="#7D93B4">kV</text>
+  <text x="84" y="122" font-family="Arial, sans-serif" font-size="8" fill="#16A34A">LEAKAGE 0.12 mA — PASS</text>
+  <!-- caution badge -->
+  <g transform="translate(210 148)">
+    <path d="M0 0l20 34H-20z" fill="#F59E0B"/>
+    <path d="M0 9l-8 16h16z" fill="#0A1628"/>
+    <text x="0" y="42" font-family="Arial" font-size="6" fill="#7D93B4" text-anchor="middle">DANGER</text>
+  </g>
+  <!-- keys -->
+  <g font-family="Arial" font-size="8" fill="#C7D6EC" text-anchor="middle">
+    <rect x="78" y="150" width="50" height="22" rx="6" fill="#0E2440" stroke="#2A4A7A"/><text x="103" y="164">AC</text>
+    <rect x="136" y="150" width="50" height="22" rx="6" fill="#0E2440" stroke="#2A4A7A"/><text x="161" y="164">DC</text>
+    <rect x="78" y="180" width="50" height="22" rx="6" fill="#0E2440" stroke="#2A4A7A"/><text x="103" y="194">IR 5G</text>
+    <rect x="136" y="180" width="50" height="22" rx="6" fill="#0E2440" stroke="#2A4A7A"/><text x="161" y="194">GND</text>
+    <circle cx="103" cy="222" r="10" fill="#1E6EF7"/><text x="103" y="226" fill="#fff" font-weight="bold">TEST</text>
+    <circle cx="161" cy="222" r="10" fill="none" stroke="#DC2626" stroke-width="2"/><text x="161" y="226" fill="#DC2626" font-weight="bold">STOP</text>
+  </g>
+  <!-- cables and DUT -->
+  <path d="M252 130c16 0 16-30 34-30" fill="none" stroke="#DC2626" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M252 150c16 0 16 40 34 40" fill="none" stroke="#3B82F6" stroke-width="3.5" stroke-linecap="round"/>
+  <rect x="286" y="84" width="58" height="120" rx="8" fill="#1A3357" stroke="#4FC3F7" stroke-opacity=".5"/>
+  <text x="315" y="150" font-family="Arial" font-size="8" fill="#7D93B4" text-anchor="middle">DUT</text>
+  <text x="60" y="268" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#E3EEFF" letter-spacing="2">VT-ESA  ELECTRICAL SAFETY TESTER</text>
+</svg>

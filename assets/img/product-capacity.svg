@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Battery capacity tester illustration">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#12263F"/><stop offset="1" stop-color="#0A1628"/>
+    </linearGradient>
+    <linearGradient id="scr" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0B1B33"/><stop offset="1" stop-color="#0A1628"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#1E6EF7"/><stop offset="1" stop-color="#4FC3F7"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" rx="18" fill="url(#bg)"/>
+  <g stroke="#FFFFFF" stroke-opacity=".045">
+    <path d="M0 60h400M0 120h400M0 180h400M0 240h400M60 0v300M120 0v300M180 0v300M240 0v300M300 0v300M360 0v300"/>
+  </g>
+  <!-- tester -->
+  <rect x="56" y="50" width="200" height="172" rx="12" fill="#132844" stroke="#1E6EF7" stroke-opacity=".55" stroke-width="1.5"/>
+  <rect x="70" y="64" width="172" height="84" rx="7" fill="url(#scr)" stroke="#2A4A7A"/>
+  <text x="80" y="82" font-family="Arial, sans-serif" font-size="9" fill="#5B7DA6">CAPACITY TEST  C/3</text>
+  <text x="80" y="116" font-family="Arial, sans-serif" font-size="26" font-weight="bold" fill="#4FC3F7">2.842</text>
+  <text x="156" y="116" font-family="Arial, sans-serif" font-size="12" fill="#7D93B4">Ah</text>
+  <rect x="80" y="132" width="152" height="8" rx="4" fill="#0E2440"/>
+  <rect x="80" y="132" width="118" height="8" rx="4" fill="url(#bar)"/>
+  <g>
+    <circle cx="110" cy="176" r="7" fill="#1E6EF7"/><text x="110" y="179" font-family="Arial" font-size="8" fill="#fff" text-anchor="middle" font-weight="bold">START</text>
+    <circle cx="140" cy="176" r="7" fill="none" stroke="#2A4A7A" stroke-width="1.5"/><text x="140" y="179" font-family="Arial" font-size="7" fill="#5B7DA6" text-anchor="middle">STOP</text>
+    <rect x="166" y="168" width="52" height="17" rx="5" fill="#0E2440" stroke="#2A4A7A"/><text x="192" y="180" font-family="Arial" font-size="7" fill="#C7D6EC" text-anchor="middle">CC DISCHG</text>
+  </g>
+  <!-- battery cell on test -->
+  <g transform="translate(286 110)">
+    <rect x="0" y="0" width="74" height="150" rx="10" fill="#1A3357" stroke="#4FC3F7" stroke-opacity=".5" stroke-width="1.5"/>
+    <rect x="26" y="0" width="22" height="10" rx="3" fill="#E3EEFF"/>
+    <path d="M18 0h38M18 150h38" stroke="#E3EEFF" stroke-width="3"/>
+    <rect x="22" y="30" width="30" height="90" rx="4" fill="none" stroke="#2A4A7A"/>
+    <text x="37" y="80" font-family="Arial" font-size="10" fill="#7D93B4" text-anchor="middle">Li-ion</text>
+    <!-- charge lightning -->
+    <path d="M37 26l-12 22h9l-5 16 15-24h-9z" fill="#F59E0B"/>
+  </g>
+  <path d="M256 120h22M256 160h22M256 200h22" stroke="#3B82F6" stroke-width="3"/>
+  <text x="56" y="258" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#E3EEFF" letter-spacing="2">VT-CT  CAPACITY TESTER</text>
+</svg>

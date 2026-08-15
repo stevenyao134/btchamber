@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Battery internal resistance tester illustration">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#12263F"/><stop offset="1" stop-color="#0A1628"/>
+    </linearGradient>
+    <linearGradient id="scr" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0B1B33"/><stop offset="1" stop-color="#0A1628"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" rx="18" fill="url(#bg)"/>
+  <g stroke="#FFFFFF" stroke-opacity=".045">
+    <path d="M0 60h400M0 120h400M0 180h400M0 240h400M60 0v300M120 0v300M180 0v300M240 0v300M300 0v300M360 0v300"/>
+  </g>
+  <!-- handheld tester body -->
+  <path d="M150 34h110c11 0 20 9 20 20v150c0 11-9 20-20 20h-44v42h-34v-42h-32c-11 0-20-9-20-20V54c0-11 9-20 20-20z" fill="#132844" stroke="#1E6EF7" stroke-opacity=".55" stroke-width="1.5"/>
+  <!-- display -->
+  <rect x="162" y="52" width="86" height="62" rx="7" fill="url(#scr)" stroke="#2A4A7A"/>
+  <text x="172" y="72" font-family="Arial, sans-serif" font-size="9" fill="#5B7DA6">AC IR 1kHz</text>
+  <text x="172" y="102" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#4FC3F7">12.34</text>
+  <text x="236" y="102" font-family="Arial, sans-serif" font-size="11" fill="#7D93B4">mΩ</text>
+  <!-- keypad -->
+  <g>
+    <circle cx="178" cy="138" r="8" fill="#0E2440" stroke="#2A4A7A"/><text x="178" y="141" font-family="Arial" font-size="8" fill="#C7D6EC" text-anchor="middle">SET</text>
+    <circle cx="205" cy="138" r="8" fill="#0E2440" stroke="#2A4A7A"/><text x="205" y="141" font-family="Arial" font-size="8" fill="#C7D6EC" text-anchor="middle">AC</text>
+    <circle cx="232" cy="138" r="8" fill="#0E2440" stroke="#2A4A7A"/><text x="232" y="141" font-family="Arial" font-size="8" fill="#C7D6EC" text-anchor="middle">DC</text>
+    <circle cx="205" cy="166" r="10" fill="#1E6EF7"/><text x="205" y="170" font-family="Arial" font-size="8" fill="#fff" text-anchor="middle" font-weight="bold">TEST</text>
+  </g>
+  <!-- probe cables -->
+  <path d="M178 196c-8 40-24 44-34 60" fill="none" stroke="#3B82F6" stroke-width="3" stroke-linecap="round"/>
+  <path d="M232 196c8 40 24 44 34 60" fill="none" stroke="#DC2626" stroke-width="3" stroke-linecap="round"/>
+  <!-- probes -->
+  <rect x="118" y="252" width="44" height="12" rx="4" fill="#0E2440" stroke="#2A4A7A"/>
+  <rect x="240" y="252" width="44" height="12" rx="4" fill="#0E2440" stroke="#2A4A7A"/>
+  <!-- battery cell -->
+  <rect x="156" y="232" width="90" height="34" rx="6" fill="#1A3357" stroke="#4FC3F7" stroke-opacity=".5"/>
+  <rect x="156" y="232" width="10" height="34" rx="4" fill="#0E2440"/>
+  <text x="206" y="254" font-family="Arial" font-size="9" fill="#7D93B4" text-anchor="middle">CELL</text>
+  <text x="212" y="284" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#E3EEFF" letter-spacing="2">VT-IR  INTERNAL RESISTANCE</text>
+</svg>
