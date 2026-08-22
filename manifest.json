@@ -1,0 +1,16 @@
+{
+  "name": "VoltTest — Battery Testing Equipment",
+  "short_name": "VoltTest",
+  "description": "Professional battery testing equipment manufacturer. Battery cyclers, safety test chambers, formation & grading systems.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A1628",
+  "theme_color": "#1E6EF7",
+  "icons": [
+    {
+      "src": "assets/img/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

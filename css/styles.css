@@ -495,3 +495,13 @@ textarea.form-control { min-height: 130px; resize: vertical; }
   .fc-1 { top: -2%; } .fc-3 { bottom: -6%; }
   .stats-band { border-block-width: 0; }
 }
+
+/* FAQ Section */
+.faq-list{max-width:800px;margin:0 auto}
+.faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:12px;overflow:hidden;background:var(--card)}
+.faq-item summary{cursor:pointer;padding:18px 22px;font-weight:600;font-size:1rem;color:var(--ink);list-style:none;display:flex;justify-content:space-between;align-items:center;transition:background .2s}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:'+';font-size:1.3rem;color:var(--primary);transition:transform .2s}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-item summary:hover{background:var(--soft)}
+.faq-item p{padding:0 22px 18px;color:var(--slate);line-height:1.7;font-size:.93rem;margin:0}
