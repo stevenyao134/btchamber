@@ -93,6 +93,13 @@
             <div class="blog-meta"><span class="cat">Technical</span><span>Apr 30, 2026</span><span>7 min read</span></div>
             <h1>LFP vs NMC Battery Testing: Key Differences Every Lab Should Know</h1>
             <p class="lead" style="margin-top:14px;">LFP and NMC dominate the global lithium battery market, but testing them requires different voltage ranges, current profiles and safety considerations. Using NMC test protocols for LFP cells — or vice versa — produces misleading data and can damage equipment.</p>
+            <figure style="margin: 24px 0; text-align: center;">
+              <img src="generated-images/A_professional_vector_illustra_2026-09-02T14-54-14.png" 
+                   alt="LFP vs NMC battery testing comparison showing voltage profiles, internal resistance differences, and cell chemistry characteristics"
+                   loading="lazy"
+                   style="max-width: 100%; height: auto; border: 1px solid #e2e8f0; border-radius: 4px;">
+              <figcaption style="font-size: .875em; color: #64748b; margin-top: 8px;">Figure 1: LFP vs NMC battery testing comparison diagram</figcaption>
+            </figure>
             <div class="author-row">
               <div class="a-avatar">ZM</div>
               <div>
@@ -112,7 +119,16 @@
 
           <h2>5. Safety Test Requirements</h2><p>Both LFP and NMC require the same core safety tests per UL 1642, IEC 62133 and GB 31241. LFP cells are more resistant to thermal runaway and typically exhibit a slower failure mode, while NMC cells can reach higher temperatures more quickly. Safety test chambers for dual-chemistry labs should be rated for the higher temperature extremes of NMC testing.</p>
 
-          <h2>6. Equipment Configuration for Dual-Chemistry Labs</h2><p>Labs testing both LFP and NMC should configure cyclers for the wider voltage range (0–5 V or higher), use auto-range IR testers, and specify safety test chambers covering both chemistries. VoltTest's VT-CDS series cyclers and VT-IR series testers are all configurable for both chemistries through software settings.</p>
+          <h2>6. Equipment Configuration for Dual-Chemistry Labs</h2><p>Labs testing both LFP and NMC should configure cyclers for the wider voltage range (0–5 V or higher), use auto-range IR testers, and specify safety test chambers covering both chemistries. VoltTest's VT-CDS series cyclers and VT-IR series testers are all configurable for both chemistries through software settings, eliminating the need for separate instrument sets.</p>
+          <h2>7. Formation and Grading Differences</h2><p>LFP formation typically requires more cycles than NMC to achieve stable SEI formation. The voltage plateau at ~3.2 V during LFP formation requires longer hold times at constant voltage (CV). NMC formation is faster but requires more precise current control due to the more active cathode chemistry. Grading criteria also differ: LFP is graded by capacity and self-discharge, while NMC adds ACIR as a key sorting parameter.</p>
+          <h2>8. Safety Test Requirements Summary</h2><p>Both LFP and NMC require the same core safety tests per UL 1642, IEC 62133 and GB 31241. However, the expected behavior differs: LFP cells are more resistant to thermal runaway and typically exhibit a slower failure mode, while NMC cells can reach higher temperatures more quickly. This means safety test chambers for dual-chemistry labs should be rated for the higher temperature extremes of NMC testing.</p>
+          <h2>9. Equipment Configuration for Dual-Chemistry Labs</h2><p>Labs testing both LFP and NMC should configure cyclers for the wider voltage range (0–5 V or higher), use auto-range IR testers, and specify safety test chambers covering both chemistries. VoltTest's VT-CDS series cyclers and VT-IR series testers are all configurable for both chemistries through software settings. Additionally, labs should calibrate IR testers for the resistance range of each chemistry, as LFP cells typically have higher internal resistance (30–60 mΩ for 18650 cells) compared to NMC (15–30 mΩ).</p>
+          <h2>10. Recommendations for Labs Transitioning from Li-ion to Na-ion</h2><p>While this article focuses on LFP vs NMC, labs transitioning from Li-ion to Na-ion testing should: (1) update cycler software with Na-ion voltage profiles, (2) design custom formation protocols in consultation with cell manufacturers, (3) calibrate IR testers for the Na-ion resistance range, (4) verify safety test chamber temperature profiles, and (5) establish capacity and cycle life baselines for Na-ion cells.</p>
+          <h2>11. Related Articles & Further Reading</h2><ul class="check-list">
+            <li><span class="ck">✓</span><a href="battery-cycler-accuracy-guide.html">Battery Cycler Accuracy: What ±0.05% FS Really Means</a></li>
+            <li><span class="ck">✓</span><a href="acir-vs-dcir-comparison.html">ACIR vs DCIR: Choosing the Right Internal Resistance Measurement Method</a></li>
+            <li><span class="ck">✓</span><a href="battery-formation-sei-process.html">The Battery Formation Process: SEI Formation and Its Impact on Cell Quality</a></li>
+          </ul>
         </article>
       </div>
     </section>
