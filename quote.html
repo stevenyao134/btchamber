@@ -215,7 +215,12 @@
                 <span class="error-msg">Please describe your project.</span>
               </div>
             </div>
-            <button class="btn btn-primary btn-block" type="submit" style="margin-top:24px;">Request Quotation →</button>
+            <button class="btn btn-primary btn-block" type="submit" 
+        onclick="window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({'event': 'quote_submit'});
+        this.form.submit();">
+    Request Quotation →
+</button>
             <p style="font-size:.78rem; color:var(--slate); text-align:center; margin-top:14px;">Your details are only used to prepare the quotation. No spam, ever.</p>
           </form>
           <div class="form-success" id="quoteSuccess">

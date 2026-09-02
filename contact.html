@@ -213,7 +213,12 @@
                   <span class="error-msg">Please enter your message.</span>
                 </div>
               </div>
-              <button class="btn btn-primary btn-block" type="submit" style="margin-top:22px;">Send Message</button>
+              <button class="btn btn-primary btn-block" type="submit" 
+        onclick="window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({'event': 'contact_submit'});
+        this.form.submit();">
+    Send Message
+</button>
             </form>
             <div class="form-success" id="contactSuccess">
               <div class="ok-icon">✓</div>
