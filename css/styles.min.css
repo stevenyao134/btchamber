@@ -260,6 +260,10 @@ textarea.form-control{min-height:130px;resize:vertical;}
 #backTop{position:fixed;right:26px;bottom:26px;z-index:90;width:46px;height:46px;border-radius:12px;background:var(--blue-600);color:#fff;border:none;font-size:1.1rem;display:grid;place-items:center;opacity:0;visibility:hidden;transform:translateY(12px);transition:all .3s ease;box-shadow:0 12px 28px rgba(30,110,247,.4);}
 #backTop.show{opacity:1;visibility:visible;transform:translateY(0);}
 #backTop:hover{background:var(--blue-500);}
+#whatsappFloat{position:fixed;right:80px;bottom:26px;z-index:90;width:46px;height:46px;border-radius:12px;background:#25D366;color:#fff;border:none;font-size:1.4rem;display:grid;place-items:center;opacity:0;visibility:hidden;transform:translateY(12px);transition:all .3s ease;box-shadow:0 12px 28px rgba(37,211,102,.4);text-decoration:none;}
+#whatsappFloat.show{opacity:1;visibility:visible;transform:translateY(0);}
+#whatsappFloat:hover{background:#128C7E;}
+#whatsappFloat svg{width:26px;height:26px;fill:#fff;}
 .toast{position:fixed;left:50%;bottom:34px;transform:translate(-50%,20px);z-index:200;background:var(--navy-800);color:#fff;border:1px solid rgba(79,195,247,.4);padding:14px 26px;border-radius:12px;font-size:.9rem;box-shadow:var(--shadow-lg);opacity:0;visibility:hidden;transition:all .3s ease;display:flex;align-items:center;gap:10px;}
 .toast.show{opacity:1;visibility:visible;transform:translate(-50%,0);}
 .toast .t-icon{color:var(--sky);}
