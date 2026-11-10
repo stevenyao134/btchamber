@@ -103,18 +103,29 @@
             </div>
           </header>
 
-          <h2>h</h2>
-          <p>p</p>
-          <h2>h</h2>
-          <p>p</p>
-          <h2>h</h2>
-          <p>p</p>
-          <h2>h</h2>
-          <p>p</p>
-          <h2>h</h2>
-          <p>p</p>
-          <h2>h</h2>
-          <p>p</p>
+          
+          <h2>Why Second-Life Batteries Need Their Own Test Protocol</h2>
+          <p>Retired EV battery packs retain 70–80% of their original capacity — too degraded for automotive duty, but potentially valuable for stationary energy storage where power density matters less than cost. Second-life deployment, however, cannot simply reuse the original factory test data. Years of real-world cycling, unknown thermal history, and possible abuse events mean every incoming pack must be treated as an unknown until proven otherwise.</p>
+          <p>This article outlines a practical testing protocol: incoming safety screening, performance re-characterization, and match grading for ESS duty — the three stages that separate viable second-life assets from liabilities.</p>
+          <figure style="margin: 28px 0; text-align: center;">
+            <img src="../generated-images/second-life-grading-2026-11-10.jpg" alt="Second-life EV battery pack grading and testing for ESS energy storage applications" loading="lazy" width="1200" height="624" style="max-width: 100%; height: auto; border: 1px solid #e2e8f0; border-radius: 4px;">
+            <figcaption style="font-size: .875em; color: #64748b; margin-top: 8px;">Figure 2: Second-life battery grading workflow from EV retirement to ESS deployment</figcaption>
+          </figure>
+          <h2>Stage 1: Incoming Inspection and Safety Screening</h2>
+          <p>Every retired pack begins with non-invasive safety checks before any electrical testing: visual inspection for mechanical damage and swelling, insulation resistance measurement (typically ≥100 Ω/V per IEC 62619 practice), and open-circuit voltage verification to detect dead or shorted modules. Packs that fail this gate go directly to dismantling and materials recovery — attempting electrical testing on a damaged pack risks fire and equipment damage.</p>
+          <p>Voltage consistency across modules is an early health indicator. A pack showing more than a few hundred millivolts of spread at rest has likely experienced uneven aging, which predicts further divergence under cycling.</p>
+          <h2>Stage 2: Capacity and Internal Resistance Retesting</h2>
+          <p>Second-life grading rests on two measured quantities: remaining usable capacity and DC internal resistance (DCIR). Capacity is determined by a full charge-discharge cycle at the intended ESS operating rate, typically 0.2–0.5C — slower than automotive test rates, because second-life cells show more rate-dependent capacity loss. DCIR at multiple SOC points (commonly 20%, 50%, and 80%) reveals whether resistance growth will cause excessive heating and power fade in stationary duty.</p>
+          <p>A useful second-life acceptance baseline: capacity retention ≥70% of nameplate and DCIR growth ≤50% over the original specification. Cells outside these bounds are usually better routed to recycling than to storage service.</p>
+          <h2>Stage 3: Match Grading for ESS Applications</h2>
+          <p>ESS systems amplify cell-to-cell differences. In a series string, the weakest cell limits usable capacity; in parallel groups, low-resistance cells take disproportionate current. Second-life grading therefore matches cells by both capacity and resistance — commonly into narrow bins (for example, capacity within ±2% and DCIR within ±10%) so that rebuilt modules age coherently rather than drifting apart.</p>
+          <p>Grading also extends to self-discharge rate and thermal behavior. Cells with elevated self-discharge (>3–5% per month at rest) often harbor early micro-shorts and should be excluded, since they will drag their neighbors down inside a large stationary string.</p>
+          <h2>Standards Landscape: Still Developing</h2>
+          <p>Dedicated second-life standards remain sparse, but the framework is filling in. IEC 63338, under development for secondary-use lithium battery requirements, is the most directly relevant emerging document. In the near term, second-life ESS integrators combine IEC 62619 (safety for industrial storage), UN 38.3 (transport of the repurposed packs), and growing insurer-specific requirements. Until dedicated standards mature, documented in-house protocols with traceable data are the strongest commercial position.</p>
+          <h2>Economics: When Repurposing Makes Sense</h2>
+          <p>Second-life economics hinge on testing cost versus recovered value. Aggressive grading — full cycle characterization per module — adds meaningful labor and cycler time, but it is what commands premium pricing from ESS buyers who need bankable warranty data. Industry experience suggests second-life testing is viable when: incoming packs are homogeneous (single fleet, single chemistry), transport distances are short, and the grading line is integrated with automated data capture rather than manual loggers.</p>
+          <h2>Conclusion</h2>
+          <p>Second-life battery testing is becoming a discipline of its own — part incoming quality control, part re-manufacturing, part risk underwriting. Labs and integrators that build rigorous screening, recharacterization, and grading protocols today will own the trust that tomorrow's repurposing market requires, especially as IEC 63338 formalizes requirements.</p>
 
           <h2>Related Articles</h2>
           <ul class="check-list">

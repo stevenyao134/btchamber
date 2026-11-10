@@ -103,18 +103,35 @@
             </div>
           </header>
 
-          <h2>h</h2>
-          <p>p</p>
-          <h2>h</h2>
-          <p>p</p>
-          <h2>h</h2>
-          <p>p</p>
-          <h2>h</h2>
-          <p>p</p>
-          <h2>h</h2>
-          <p>p</p>
-          <h2>h</h2>
-          <p>p</p>
+          
+          <h2>Why Temperature Control Defines Test Quality</h2>
+          <p>In battery safety testing, temperature is never a background variable — it is the test itself. Nail penetration, overcharge, short circuit, and thermal abuse tests all hinge on how precisely the chamber can control, measure, and respond to thermal events. A chamber that drifts 3°C at setpoint does not merely add uncertainty; it can change the failure mode being studied. Reproducible safety data starts with thermal discipline.</p>
+          <p>This article breaks down the thermal parameters that matter most, the detection systems that catch runaway events, and the chamber design features that make extreme-temperature battery testing safe to operate daily.</p>
+          <figure style="margin: 28px 0; text-align: center;">
+            <img src="../generated-images/thermal-runaway-detection-2026-11-10.jpg" alt="Thermal runaway detection system with temperature sensors, gas analysis and ventilation in battery test chamber" loading="lazy" width="1200" height="624" style="max-width: 100%; height: auto; border: 1px solid #e2e8f0; border-radius: 4px;">
+            <figcaption style="font-size: .875em; color: #64748b; margin-top: 8px;">Figure 2: Thermal runaway detection architecture in a battery safety test chamber</figcaption>
+          </figure>
+          <h2>Core Parameters: Uniformity, Stability and Ramp Rate</h2>
+          <p>Three specifications determine whether a chamber is suitable for battery work. <strong>Temperature uniformity</strong> — typically ±2°C or better across the working volume — ensures every cell in a multi-cell fixture experiences the same conditions. <strong>Stability</strong> (±0.5°C after soak) governs the repeatability of capacity and aging data. <strong>Ramp rate</strong>, usually specified at 3–5°C/min for standard chambers and up to 15°C/min for rapid-change units, determines throughput for temperature cycling tests specified in IEC 62660-2 and GB 38031.</p>
+          <p>For lithium cell testing, chamber windows of -40°C to +150°C cover most environmental and abuse-test preconditions. Exceeding +150°C introduces material challenges — seal integrity, sensor drift, and heater safety interlocks — that demand purpose-built thermal abuse chambers rather than converted environmental units.</p>
+          <h2>Detecting Thermal Runaway Before It Propagates</h2>
+          <p>Thermal runaway detection relies on layered sensing. Surface-mounted thermocouples on individual cells catch the initial exotherm, which typically precedes visible venting by tens of seconds. Gas sensors — hydrogen and CO detectors — provide the second warning layer, since electrolyte decomposition releases flammable gases before flame appears. Pressure and smoke sensors complete the stack.</p>
+          <p>Detection is only useful if it triggers response. Modern safety chambers interlink sensors with automatic actions: cut heater output, force exhaust, inert gas purge, and remote alarms. The goal is not merely to record the runaway but to contain it so adjacent test samples and the chamber itself survive.</p>
+          <h2>Chamber Design: Ventilation, Exhaust and Fire Suppression</h2>
+          <p>A safety test chamber for lithium batteries must manage three hazards: flammable gas release, toxic electrolyte vapor, and sustained fire. Effective designs combine high-volume forced exhaust (sized for worst-case venting of the largest test article), spark-proof internal components, and optional CO₂ or N₂ suppression systems. Explosion-relief panels direct overpressure away from operators, and viewing windows use polycarbonate laminates rather than plain glass.</p>
+          <p>Equally important is what happens outside the chamber: dedicated exhaust ducting routed away from occupied spaces, and test-cell fixtures rated for the mechanical forces of venting. A chamber is only as safe as the installation around it.</p>
+          <h2>Standards That Demand Thermal Precision</h2>
+          <p>Several key standards impose explicit thermal requirements. UN 38.3 Test T2 demands rapid -40°C to +75°C cycling with 30-minute dwells. IEC 62660-2 and GB 38031 specify thermal cycling plus thermal abuse at 130°C dwell for 30 (or 120) minutes depending on the standard revision. UL 1642 and UL 2054 add their own hotbox profiles. Meeting these sequences repeatably requires chambers with documented uniformity and calibrated, traceable sensors — qualities auditors increasingly verify on site.</p>
+          <h2>Practical Checklist for Laboratory Teams</h2>
+          <ul class="check-list">
+          <li><span class="ck">✓</span>Verify uniformity mapping annually, with the loaded fixture in place — empty-chamber maps overstate performance.</li>
+          <li><span class="ck">✓</span>Place thermocouples on cells, not just chamber air; air temperature lags cell temperature under rapid ramps.</li>
+          <li><span class="ck">✓</span>Interlock heater output with gas detection, not only with over-temperature switches.</li>
+          <li><span class="ck">✓</span>Budget exhaust capacity for the largest single-cell or module venting event, with margin.</li>
+          <li><span class="ck">✓</span>Log all thermal channels at ≥1 Hz for abuse tests — post-event analysis depends on time resolution.</li>
+          </ul>
+          <h2>Conclusion</h2>
+          <p>Thermal management in battery safety testing is a system discipline: chamber specification, sensor placement, detection logic, and exhaust design must work as one. Labs that treat these parameters rigorously produce safety data that regulators, customers, and insurers accept — and they protect their people and assets while doing it.</p>
 
           <h2>Related Articles</h2>
           <ul class="check-list">

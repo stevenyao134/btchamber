@@ -103,18 +103,44 @@
             </div>
           </header>
 
-          <h2>h</h2>
-          <p>p</p>
-          <h2>h</h2>
-          <p>p</p>
-          <h2>h</h2>
-          <p>p</p>
-          <h2>h</h2>
-          <p>p</p>
-          <h2>h</h2>
-          <p>p</p>
-          <h2>h</h2>
-          <p>p</p>
+          
+          <h2>Define Your Testing Scope First</h2>
+          <p>The most expensive mistake in laboratory planning is buying equipment before defining the test scope. A lab intended for cell R&D cycling needs a fundamentally different configuration from one performing production EOL checks or certification-level abuse testing. Before any purchase, write down: cell chemistries (LFP, NMC, sodium-ion), form factors (cylindrical, prismatic, pouch), test standards you must satisfy, and expected sample volumes per week.</p>
+          <p>These four inputs determine channel counts, power levels, chamber temperature ranges, and safety provisions. Equipment chosen against a written scope stays useful for years; equipment bought speculatively gets shelved.</p>
+          <figure style="margin: 28px 0; text-align: center;">
+            <img src="../generated-images/lab-layout-guide-2026-11-10.jpg" alt="Battery testing laboratory equipment layout and planning guide with cyclers chambers and safety zones" loading="lazy" width="1200" height="624" style="max-width: 100%; height: auto; border: 1px solid #e2e8f0; border-radius: 4px;">
+            <figcaption style="font-size: .875em; color: #64748b; margin-top: 8px;">Figure 2: Typical battery testing laboratory zoning: cyclers, chambers, abuse-test area</figcaption>
+          </figure>
+          <h2>Core Equipment: Cyclers and Analyzers</h2>
+          <p>Battery cyclers are the workhorse of any lab — they charge and discharge cells under programmed profiles while logging current, voltage, and temperature. For cell R&D, plan for 5V/6V max voltage (covering sodium-ion and high-voltage chemistries) and current ranges spanning mA (coin cells) to hundreds of amps (large prismatic cells). Channel count matters more than headline power: 64–128 channels of mid-range cyclers usually beat a few high-power units for early-stage labs.</p>
+          <p>Alongside cyclers, an internal resistance tester (ACIR at 1 kHz plus DCIR capability) and a precision capacity tester form the minimum characterization set. If you test pouch or prismatic cells, plan fixture tooling with integrated temperature sensing — poor fixtures are the leading cause of noisy, unreproducible data.</p>
+          <h2>Environmental Testing: Chambers You Actually Need</h2>
+          <p>Environmental chambers serve two distinct roles: conditioning (bringing cells to defined temperatures before cycling) and environmental stress testing (temperature cycling, humidity, altitude per UN 38.3 and IEC 62660-2). For conditioning, benchtop chambers at -40°C to +100°C with ±1°C stability suffice. For standards work, you need the specific profiles written into the standards — UN 38.3 Test T2's -40°C/+75°C cycling, damp heat at 85°C/85% RH, and low-pressure simulation at 11.6 kPa.</p>
+          <p>A common planning error is underestimating chamber volume. Cycle chambers must accommodate loaded fixtures, not just bare cells; as a rule of thumb, budget 2–3× the nominal cell volume for fixture and airflow clearance.</p>
+          <h2>Safety and Abuse Test Equipment</h2>
+          <p>If your scope includes certification testing, abuse equipment is unavoidable: nail penetration and crush rigs (GB 38031, IEC 62660-2), short-circuit testers with calibrated external resistance, overcharge/overdischarge units, thermal abuse chambers, and drop or impact benches for transport testing. Each carries facility consequences — nail and crush testing demands explosion venting, exhaust, and physical separation from other areas.</p>
+          <p>Plan abuse equipment as a protected zone: dedicated room, independent exhaust, fire suppression, and blast-rated observation. Retrofitting safety separation after the fact costs far more than reserving space during initial layout.</p>
+          <h2>Facility Requirements: Power, Ventilation and Layout</h2>
+          <p>Cycler channels consume real power: a 5V/100A channel at full draw is 500W of load plus heat rejection, and a 128-channel wall approaches 64 kW under simultaneous full-rate operation. Verify three-phase supply capacity and HVAC headroom before specifying equipment. Ventilation follows the hazard map: charging areas need modest extraction, while abuse-test zones need high-volume, spark-proof exhaust.</p>
+          <p>Layout-wise, separate the four hazard tiers: characterization (cyclers, low risk), environmental conditioning (medium), abuse testing (high), and storage of charged samples (controlled). Keep material flow one-directional from receiving to shipping — cross-contamination of workflows is a classic source of procedural errors in growing labs.</p>
+          <h2>Budget Planning and Phased Investment</h2>
+          <p>A realistic phased approach for a mid-size cell laboratory:</p>
+          <ul class="check-list">
+          <li><span class="ck">✓</span>Phase 1 — Characterization core: cyclers, IR tester, one conditioning chamber, fixtures (typically the largest initial line item).</li>
+          <li><span class="ck">✓</span>Phase 2 — Environmental compliance: temperature cycling chamber, humidity chamber, altitude simulation for UN 38.3.</li>
+          <li><span class="ck">✓</span>Phase 3 — Safety testing: abuse rigs and their dedicated facility provisions, sized to certification scope.</li>
+          <li><span class="ck">✓</span>Phase 4 — Automation and data: CAN-based EOL stations, automated data archival, LIMS integration.</li>
+          </ul>
+          <p>Phasing lets data from earlier phases inform later purchases — and spreads capital in step with program revenue.</p>
+          <h2>Common Mistakes to Avoid</h2>
+          <ul class="check-list">
+          <li><span class="ck">✓</span>Buying channels without checking data software quality — 128 channels you cannot audit are worse than 32 you can.</li>
+          <li><span class="ck">✓</span>Skipping fixture investment; measurement quality is decided at the cell-terminal interface.</li>
+          <li><span class="ck">✓</span>Locating abuse tests near offices or shared corridors — separation cannot be improvised.</li>
+          <li><span class="ck">✓</span>Forgetting spare parts and calibration contracts in the operating budget; annual service typically runs 5–8% of equipment value.</li>
+          </ul>
+          <h2>Conclusion</h2>
+          <p>A battery testing laboratory succeeds on scope clarity, not equipment volume. Define chemistries, standards, and throughput first; then assemble cyclers, chambers, and abuse equipment in phases that match program needs. Manufacturers who offer configuration consulting — rather than a price list — are worth their premium at the planning stage, because a lab built on a coherent scope grows with the industry instead of against it.</p>
 
           <h2>Related Articles</h2>
           <ul class="check-list">
