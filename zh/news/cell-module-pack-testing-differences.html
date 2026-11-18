@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>电芯、模组与Pack测试：层级、标准与设备差异</title>
+  <meta name="description" content="电芯、模组、Pack三个层级的电池测试差异：各层级标准、设备要求、失效成本放大逻辑与合理的测试金字塔。">
+  <link rel="canonical" href="https://www.btchamber.com/zh/news/cell-module-pack-testing-differences.html">
+  <link rel="alternate" hreflang="en" href="https://www.btchamber.com/news/cell-module-pack-testing-differences.html">
+  <link rel="alternate" hreflang="zh-CN" href="https://www.btchamber.com/zh/news/cell-module-pack-testing-differences.html">
+  <link rel="alternate" hreflang="x-default" href="https://www.btchamber.com/news/cell-module-pack-testing-differences.html">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:title" content="电芯、模组与Pack测试：层级与标准">
+  <meta property="og:description" content="电池测试在电芯、模组、Pack三个层级如何不同：标准、设备、失效成本放大与测试金字塔策略。">
+  <meta property="og:url" content="https://www.btchamber.com/zh/news/cell-module-pack-testing-differences.html">
+  <link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
+  <link rel="stylesheet" href="../../css/styles.min.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YS20GQTPFM"></script>
+  <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-YS20GQTPFM');</script>
+  <meta property="og:image" content="https://www.btchamber.com/generated-images/cell-module-pack-testing-2026-11-18.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="624">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://www.btchamber.com/generated-images/cell-module-pack-testing-2026-11-18.jpg">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "电芯、模组与Pack测试：层级、标准与设备差异", "description": "电芯、模组、Pack三个层级的电池测试差异：标准、设备要求、失效成本逻辑与测试金字塔。", "author": {"@type": "Organization", "name": "VoltTest"}, "publisher": {"@type": "Organization", "name": "VoltTest", "url": "https://www.btchamber.com"}, "datePublished": "2026-11-18", "dateModified": "2026-11-18", "image": "https://www.btchamber.com/generated-images/cell-module-pack-testing-2026-11-18.jpg", "inLanguage": "zh-CN", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.btchamber.com/zh/news/cell-module-pack-testing-differences.html"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "首页", "item": "https://www.btchamber.com/"}, {"@type": "ListItem", "position": 2, "name": "新闻与博客", "item": "https://www.btchamber.com/zh/news.html"}, {"@type": "ListItem", "position": 3, "name": "电芯、模组与Pack测试：层级、标准与设备差异", "item": "https://www.btchamber.com/zh/news/cell-module-pack-testing-differences.html"}]}</script>
+  <meta name="theme-color" content="#1E6EF7">
+  <link rel="manifest" href="../../manifest.json">
+  <meta name="msvalidate.01" content="971027AB10C39CCC3082536328CADF3E">
+</head>
+<body>
+<header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="../../index.html" class="brand" aria-label="VoltTest 首页">
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 64 64" fill="none"><path d="M36 8L18 38h12l-4 18 20-32H34z" fill="#fff"/></svg>
+        </span>
+        <span class="brand-text">Volt<strong>Test</strong></span>
+      </a>
+      <nav class="site-nav" id="siteNav" aria-label="主导航">
+        <ul class="nav-list">
+          <li><a href="../../index.html" class="nav-link">首页</a></li>
+          <li class="has-dropdown">
+            <a href="../../products.html" class="nav-link">产品中心</a>
+            <ul class="dropdown">
+              <li><a href="../../products/environment-test-chamber/">环境试验箱</a></li>
+              <li><a href="../../products/safety-reliability-test-chamber/">安全可靠性试验设备</a></li>
+              <li><a href="../../products/electrical-safety-tester/">电气安全测试仪</a></li>
+              <li><a href="../../products/safety-regulations-test-chamber/">安规认证试验设备</a></li>
+              <li><a href="../../products/large-capacity-battery-test-chamber/">大容量电池试验设备</a></li>
+              <li><a href="../../products/customized-non-standard-battery-test-equipment/">定制非标设备</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <a href="../../solutions.html" class="nav-link">解决方案</a>
+            <ul class="dropdown">
+              <li><a href="../../solutions/ev-battery-testing/">动力电池测试方案</a></li>
+              <li><a href="../../solutions/lithium-battery-testing/">锂电池测试方案</a></li>
+              <li><a href="../../solutions/battery-pack-eol-testing/">Pack 下线检测</a></li>
+            </ul>
+          </li>
+          <li><a href="../../about.html" class="nav-link">关于我们</a></li>
+          <li><a href="../news.html" class="nav-link active" aria-current="page">新闻与博客</a></li>
+          <li><a href="../../contact.html" class="nav-link">联系我们</a></li>
+          <li class="nav-cta"><a href="../../quote.html" class="btn btn-primary btn-sm">获取报价</a></li>
+          <li class="lang-switch"><a href="https://www.btchamber.com/news/cell-module-pack-testing-differences.html" class="lang-current" style="text-decoration:none;color:inherit;">English</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="打开菜单" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="面包屑">
+          <a href="../../index.html">首页</a><span class="sep">/</span><a href="../news.html">新闻与博客</a><span class="sep">/</span><span>技术</span>
+        </nav>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <article class="prose" style="margin-inline:auto;">
+          <header class="article-head">
+            <div class="blog-meta"><span class="cat">技术</span><span>2026年11月18日</span><span>约8分钟</span></div>
+            <h1>电芯、模组与Pack测试：层级、标准与设备差异</h1>
+            <p class="lead" style="margin-top:14px;">同一块电池在三个层级上是三个不同的测试问题。电芯测试验证电化学；模组测试验证制造；Pack测试验证系统工程。每层跑相同程序的团队在浪费预算，跳层的团队则在五分钱的问题变成五万美元的问题之后才发现它。本文讲清各层级到底差在哪。</p>
+            <figure style="margin: 24px 0; text-align: center;">
+              <img src="../../generated-images/cell-module-pack-testing-2026-11-18.jpg"
+                   alt="电池测试在电芯、模组、Pack三个层级如何不同：标准、设备、失效成本放大与测试金字塔策略。"
+                   loading="eager"
+                   style="max-width: 100%; height: auto; border: 1px solid #e2e8f0; border-radius: 4px;"
+                   width="1200" height="624">
+              <figcaption style="font-size: .875em; color: #64748b; margin-top: 8px;">图1：电芯、模组与Pack测试：层级、标准与设备差异</figcaption>
+            </figure>
+            <div class="author-row">
+              <div class="a-avatar">LW</div>
+              <div>
+                <div class="a-name">李伟博士 · 首席测试工程师</div>
+                <div class="a-date">VoltTest Technology &middot; 技术</div>
+              </div>
+            </div>
+          </header>
+
+          
+<h2>测试金字塔</h2>
+<p>把电池验证想成金字塔。塔基是数千只电芯做表征与循环寿命——样本量大、单只成本低。中层是模组（数十只）验证焊接质量、热界面、均衡行为与互联完整性。塔尖是极少数Pack承受系统级滥用、环境与功能测试。样本量随单价上升而下降——这意味着每层必须回答不同的问题：塔基证明设计，中层证明制造，塔尖证明系统。</p>
+<h2>电芯层级：电化学与一致性</h2>
+<p>电芯测试围绕容量、阻抗、倍率、循环寿命、日历老化与安全滥用展开。标准集中在 IEC 62660-1/-2（动力电芯）、IEC 62133-2（消费类）与 UN 38.3。设备以充放电系统为核心：从软包电芯的几安培到大尺寸的数百安培通道，配温度受控循环试验箱。这一层级的关键输出不只是通过/失败，而是<strong>分布统计</strong>——均值高但一致性差的电芯设计，到模组层必然造成均衡问题。</p>
+<h2>模组层级：制造质量</h2>
+<p>模组加入焊接或螺栓互联、热界面材料、结构件与CMU。测试聚焦装配带来或破坏了什么：焊接完整性（拉力与剥离）、热循环下接触电阻增长、冷却液泄漏路径、均衡精度，以及串中最弱电芯在应力下的行为。设备转向热-机联合装置——试验箱内用夹具对互联施加应力，同时记录每颗电芯的电压与温度。</p>
+<h2>Pack层级：系统测试</h2>
+<p>Pack测试是 GB 38031、ISO 12405-4、UN R100 与OEM规范的集中地：振动与机械冲击、挤压、热失控传播、IP防护、BMS通信（CAN/RS-485协议测试）、绝缘与高压安全、热管理性能与完整功能安全验证。设备相应放大——大容积试验箱、多轴振动台、全Pack电流额定的大功率充放电系统、BMS验证用HIL台架。Pack测试昂贵；每个Pack级测试项目都应有书面论证，说明为什么低层级数据回答不了该问题。</p>
+<h2>失效成本放大逻辑</h2>
+<p>电芯设计阶段发现的失效改一次设计；同一失效在Pack验证阶段发现，代价是设计修改之外再加夹具重制、项目重新认证，往往还有一个季度的进度。这就是成熟组织压向塔基的原因：激进的电芯级筛选含统计过程确认、由电芯级发现驱动的模组级抽测、Pack级测试只留给系统问题。金字塔同样定义设备策略——大部分实验室资本属于塔基，那里的通量成倍放大洞察。</p>
+<h2>层级映射清单</h2>
+<ul class="check-list">
+<li><span class="ck">&#10003;</span>验证计划中的每条要求都归属一个层级——不留孤儿测试。</li>
+<li><span class="ck">&#10003;</span>电芯分布数据（而非仅均值）带入模组均衡分析。</li>
+<li><span class="ck">&#10003;</span>Pack级项目只留给系统问题：传播、BMS、IP、振动。</li>
+<li><span class="ck">&#10003;</span>模组级即使标准未要求也记录每颗电芯电压与温度。</li>
+<li><span class="ck">&#10003;</span>每季度按层级复盘失效成本，重新平衡测试计划。</li>
+</ul>
+
+
+          <h2>相关文章</h2>
+          <ul class="check-list">
+<li><span class="ck">&#10003;</span><a href="../../news/battery-pack-eol-test-guide.html">电池Pack EOL测试完整指南（英文）</a></li>
+<li><span class="ck">&#10003;</span><a href="../../news/bms-communication-testing.html">BMS通信测试：CAN、RS-485与协议验证（英文）</a></li>
+<li><span class="ck">&#10003;</span><a href="../../news/ev-battery-pack-testing-trends.html">动力电池Pack测试趋势解析（英文）</a></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section soft">
+      <div class="container">
+        <div class="cta-band reveal">
+          <div>
+            <h2>需要为电池检测实验室选型？</h2>
+            <p>告诉我们您的测试需求——我们免费提供设备配置建议。</p>
+          </div>
+          <a href="../../contact.html" class="btn btn-light">联系我们 &rarr;</a>
+        </div>
+      </div>
+    </section>
+  </main>
+<footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="../../index.html" class="brand" aria-label="VoltTest 首页">
+            <span class="brand-mark" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 64 64" fill="none"><path d="M36 8L18 38h12l-4 18 20-32H34z" fill="#fff"/></svg>
+            </span>
+            <span class="brand-text">Volt<strong>Test</strong></span>
+          </a>
+          <p class="f-blurb">专业电池检测设备制造商。精密充放电测试系统、安全试验箱与化成分容系统，服务全球储能产业。</p>
+          <div class="social-row">
+            <a class="social-btn" href="#" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.2 8.2h4.6V23H.2V8.2zM8.2 8.2h4.4v2h.06c.61-1.16 2.1-2.38 4.33-2.38 4.63 0 5.49 3.05 5.49 7.01V23h-4.6v-7.2c0-1.72-.03-3.93-2.4-3.93-2.4 0-2.77 1.87-2.77 3.8V23H8.2V8.2z"/></svg></a>
+            <a class="social-btn" href="#" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-5.8zM9.6 15.6V8.4L15.8 12l-6.2 3.6z"/></svg></a>
+            <a class="social-btn" href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.89v2.26h3.32l-.53 3.49h-2.79V24C19.61 23.1 24 18.1 24 12.07z"/></svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>快速导航</h4>
+          <a href="../../index.html">首页</a>
+          <a href="../../products.html">产品中心</a>
+          <a href="../../solutions.html">解决方案</a>
+          <a href="../../about.html">关于我们</a>
+          <a href="../news.html">新闻与博客</a>
+          <a href="../../contact.html">联系我们</a>
+          <a href="../../quote.html">获取报价</a>
+        </div>
+        <div class="footer-col">
+          <h4>产品中心</h4>
+          <a href="../../products/environment-test-chamber/">环境试验箱</a>
+          <a href="../../products/safety-reliability-test-chamber/">安全可靠性试验设备</a>
+          <a href="../../products/electrical-safety-tester/">电气安全测试仪</a>
+          <a href="../../products/safety-regulations-test-chamber/">安规认证试验设备</a>
+          <a href="../../products/large-capacity-battery-test-chamber/">大容量电池试验设备</a>
+          <a href="../../products/customized-non-standard-battery-test-equipment/">定制非标设备</a>
+        </div>
+        <div class="footer-col">
+          <h4>联系方式</h4>
+          <ul class="footer-contact">
+            <li><span class="fc-icon">✉</span><span>peter@btchamber.com</span></li>
+            <li><span class="fc-icon"><a href="https://wa.me/8613532762231" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;">☏</a></span><span><a href="https://wa.me/8613532762231" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;">+86 13532762231 (WhatsApp)</a></span></li>
+            <li><span class="fc-icon">⌖</span><span>广东省深圳市高科技工业园A3栋</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span id="year">2026</span> VoltTest Technology Co., Ltd. 保留所有权利。</span>
+        <span>电池检测设备 · 电池测试系统 · OEM/ODM</span>
+      </div>
+    </div>
+  </footer>  <a href="https://wa.me/8613532762231" target="_blank" rel="noopener noreferrer" id="whatsappFloat" aria-label="WhatsApp 联系我们">
+    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16.004 0C7.164 0 .004 7.16.004 15.996c0 2.812.736 5.564 2.14 7.988L.016 32l8.188-2.124c2.364 1.288 5.044 1.968 7.8 1.968 8.836 0 15.996-7.16 15.996-15.996S24.84 0 16.004 0zm0 29.28c-2.48 0-4.912-.648-7.06-1.876l-5.46 1.416 1.452-5.308c-1.468-2.36-2.244-5.092-2.244-7.924 0-6.628 5.392-12.02 12.02-12.02 6.624 0 12.016 5.392 12.016 12.02 0 6.628-5.392 12.004-12.004 12.004zm5.06-3.908c.336-.136 1.92-.728 2.196-1.288.276-.56.276-1.036.192-1.136-.084-.1-.308-.16-.644-.296-.336-.136-1.988-.984-2.296-1.1-.308-.112-.532-.168-.756.168-.224.336-.868 1.104-1.064 1.332-.196.228-.392.252-.728.084-.336-.168-1.416-.524-2.696-1.672-.988-.896-1.652-2.004-1.844-2.34-.192-.336-.02-.516.148-.684.152-.152.336-.392.504-.588.168-.196.224-.336.336-.56.112-.224.056-.42-.028-.588-.084-.168-.756-1.824-1.036-2.496-.272-.652-.548-.564-.756-.576-.196-.012-.42-.016-.644-.016-.224 0-.588.084-.896.42-.308.336-1.176 1.148-1.176 2.804s1.204 3.26 1.372 3.484c.168.224 2.368 3.616 5.732 5.072.8.348 1.424.556 1.908.712.8.28 1.528.24 2.104.144.64-.104 1.92-.784 2.192-1.544.272-.76.272-1.412.192-1.548-.084-.14-.308-.224-.644-.392z"/></svg>
+  </a>
+  <button id="backTop" aria-label="返回顶部">↑</button>
+
+  <script src="../../js/main.min.js"></script>
+</body>
+</html>

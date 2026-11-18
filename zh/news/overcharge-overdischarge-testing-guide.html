@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>电池过充过放测试指南：电气滥用试验全解析</title>
+  <meta name="description" content="锂电池电气滥用测试实务：UN 38.3、IEC 62133 与 UL 的过充过放程序、判定标准、充放电设备配置与安全腔集成。">
+  <link rel="canonical" href="https://www.btchamber.com/zh/news/overcharge-overdischarge-testing-guide.html">
+  <link rel="alternate" hreflang="en" href="https://www.btchamber.com/news/overcharge-overdischarge-testing-guide.html">
+  <link rel="alternate" hreflang="zh-CN" href="https://www.btchamber.com/zh/news/overcharge-overdischarge-testing-guide.html">
+  <link rel="alternate" hreflang="x-default" href="https://www.btchamber.com/news/overcharge-overdischarge-testing-guide.html">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:title" content="电池过充过放测试指南">
+  <meta property="og:description" content="正确执行过充与过放滥用测试：UN 38.3 T7/T8、IEC 62133 与 UL 程序、判定标准、设备配置与安全要求。">
+  <meta property="og:url" content="https://www.btchamber.com/zh/news/overcharge-overdischarge-testing-guide.html">
+  <link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
+  <link rel="stylesheet" href="../../css/styles.min.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YS20GQTPFM"></script>
+  <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-YS20GQTPFM');</script>
+  <meta property="og:image" content="https://www.btchamber.com/generated-images/overcharge-overdischarge-testing-2026-11-18.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="624">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://www.btchamber.com/generated-images/overcharge-overdischarge-testing-2026-11-18.jpg">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "电池过充过放测试指南：电气滥用试验全解析", "description": "锂电池电气滥用测试：过充与过放程序、UN 38.3 与 IEC 62133 要求、判定标准与设备配置。", "author": {"@type": "Organization", "name": "VoltTest"}, "publisher": {"@type": "Organization", "name": "VoltTest", "url": "https://www.btchamber.com"}, "datePublished": "2026-11-18", "dateModified": "2026-11-18", "image": "https://www.btchamber.com/generated-images/overcharge-overdischarge-testing-2026-11-18.jpg", "inLanguage": "zh-CN", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.btchamber.com/zh/news/overcharge-overdischarge-testing-guide.html"}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "首页", "item": "https://www.btchamber.com/"}, {"@type": "ListItem", "position": 2, "name": "新闻与博客", "item": "https://www.btchamber.com/zh/news.html"}, {"@type": "ListItem", "position": 3, "name": "电池过充过放测试指南：电气滥用试验全解析", "item": "https://www.btchamber.com/zh/news/overcharge-overdischarge-testing-guide.html"}]}</script>
+  <meta name="theme-color" content="#1E6EF7">
+  <link rel="manifest" href="../../manifest.json">
+  <meta name="msvalidate.01" content="971027AB10C39CCC3082536328CADF3E">
+</head>
+<body>
+<header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="../../index.html" class="brand" aria-label="VoltTest 首页">
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 64 64" fill="none"><path d="M36 8L18 38h12l-4 18 20-32H34z" fill="#fff"/></svg>
+        </span>
+        <span class="brand-text">Volt<strong>Test</strong></span>
+      </a>
+      <nav class="site-nav" id="siteNav" aria-label="主导航">
+        <ul class="nav-list">
+          <li><a href="../../index.html" class="nav-link">首页</a></li>
+          <li class="has-dropdown">
+            <a href="../../products.html" class="nav-link">产品中心</a>
+            <ul class="dropdown">
+              <li><a href="../../products/environment-test-chamber/">环境试验箱</a></li>
+              <li><a href="../../products/safety-reliability-test-chamber/">安全可靠性试验设备</a></li>
+              <li><a href="../../products/electrical-safety-tester/">电气安全测试仪</a></li>
+              <li><a href="../../products/safety-regulations-test-chamber/">安规认证试验设备</a></li>
+              <li><a href="../../products/large-capacity-battery-test-chamber/">大容量电池试验设备</a></li>
+              <li><a href="../../products/customized-non-standard-battery-test-equipment/">定制非标设备</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <a href="../../solutions.html" class="nav-link">解决方案</a>
+            <ul class="dropdown">
+              <li><a href="../../solutions/ev-battery-testing/">动力电池测试方案</a></li>
+              <li><a href="../../solutions/lithium-battery-testing/">锂电池测试方案</a></li>
+              <li><a href="../../solutions/battery-pack-eol-testing/">Pack 下线检测</a></li>
+            </ul>
+          </li>
+          <li><a href="../../about.html" class="nav-link">关于我们</a></li>
+          <li><a href="../news.html" class="nav-link active" aria-current="page">新闻与博客</a></li>
+          <li><a href="../../contact.html" class="nav-link">联系我们</a></li>
+          <li class="nav-cta"><a href="../../quote.html" class="btn btn-primary btn-sm">获取报价</a></li>
+          <li class="lang-switch"><a href="https://www.btchamber.com/news/overcharge-overdischarge-testing-guide.html" class="lang-current" style="text-decoration:none;color:inherit;">English</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="打开菜单" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="面包屑">
+          <a href="../../index.html">首页</a><span class="sep">/</span><a href="../news.html">新闻与博客</a><span class="sep">/</span><span>技术</span>
+        </nav>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <article class="prose" style="margin-inline:auto;">
+          <header class="article-head">
+            <div class="blog-meta"><span class="cat">技术</span><span>2026年11月18日</span><span>约8分钟</span></div>
+            <h1>电池过充过放测试指南：电气滥用试验全解析</h1>
+            <p class="lead" style="margin-top:14px;">充电器故障、BMS失效与接线错误，使过充和过放成为电池在真实世界最可能遭遇的电气滥用。标准为此设置了刻意绕开保护系统的滥用试验。本文讲清测试如何运作、判定标准要求什么，以及如何配置充放电设备和试验箱以安全执行。</p>
+            <figure style="margin: 24px 0; text-align: center;">
+              <img src="../../generated-images/overcharge-overdischarge-testing-2026-11-18.jpg"
+                   alt="正确执行过充与过放滥用测试：UN 38.3 T7/T8、IEC 62133 与 UL 程序、判定标准、设备配置与安全要求。"
+                   loading="eager"
+                   style="max-width: 100%; height: auto; border: 1px solid #e2e8f0; border-radius: 4px;"
+                   width="1200" height="624">
+              <figcaption style="font-size: .875em; color: #64748b; margin-top: 8px;">图1：电池过充过放测试指南：电气滥用试验全解析</figcaption>
+            </figure>
+            <div class="author-row">
+              <div class="a-avatar">LW</div>
+              <div>
+                <div class="a-name">李伟博士 · 首席测试工程师</div>
+                <div class="a-date">VoltTest Technology &middot; 技术</div>
+              </div>
+            </div>
+          </header>
+
+          
+<h2>电气滥用测试为何存在</h2>
+<p>每一块服役中的电池都依赖电子系统维持安全窗口。当这些电子失效——充电FET卡滞、电压采样线错标定、用错充电器——电芯本身就成了最后一道防线。过充引发析锂与电解液氧化，电芯发热直至泄气或起火；过放溶解负极铜集流体，深放电后再充电可能在内部植入铜短路。滥用测试证明的是电芯对这两种场景的内在耐受。</p>
+<h2>关键标准程序</h2>
+<p><strong>过充。</strong>UN 38.3 T7 以2倍推荐持续充电电流对电池充电，要求测试期间及之后7小时不起火不爆炸。IEC 62133-2 规定对满充电芯以规定恒流过充并监测壳温，判定不起火不爆炸。UL 1642 与 UL 2054 各有变体，GB 38031 在Pack级增加了按电压倍数定义的过充。对结果影响最大的参数是电流倍率与终止条件——务必核对现行版本。</p>
+<p><strong>过放。</strong>UN 38.3 T8 用12 V直流源迫使放电后的电芯反向放电（高温环境），要求不起火不爆炸。IEC 62133-2 及客户规范另有放电超限与强制放电变体。过放测试隐蔽的危险在"之后"：经受住深放电的电芯可能在再充电时剧烈失效——因此标准与内部程序必须定义再充电步骤及其观察窗口。</p>
+<h2>设备配置：充放电系统就是测试本身</h2>
+<p>过充把电芯推远超额定值，功率通道必须按电芯最大电压电流的数倍选型并留裕量。恒流调节必须在整个温度 excursion 中保持——廉价电源随电芯升温而限流回折，会无声地弱化测试。测量与施加同样重要：高速采样电压、热电偶贴附电芯表面、贯穿观察窗口连续记录；过充的危险阶段常出现在充电终止后的数分钟，而非充电过程中。</p>
+<p>滥用测试应在带泄爆与远程观察的安全腔内执行。过充中的50 Ah电芯在被证明无害之前就是现场火灾场景，腔体防护让团队敢于常态化执行这项测试。</p>
+<h2>判定标准与真实含义</h2>
+<p>多数标准只要求不起火不爆炸——泄气通常被允许。这只是运输与产品安全底线，不是质量标准。优秀设计会自我加码：壳温有界、泄气方向受控、无抛射物、样品间电压行为一致。在通过/失败之上建立内部严重度评分，能把滥用测试变成设计改进数据。</p>
+<h2>检查清单</h2>
+<ul class="check-list">
+<li><span class="ck">&#10003;</span>功率通道按最坏电压电流 excursion 选型并留裕量。</li>
+<li><span class="ck">&#10003;</span>验证恒流在电芯升温时保持稳定，无无声回折。</li>
+<li><span class="ck">&#10003;</span>电压与表面温度记录贯穿全部观察窗口，而非仅充电阶段。</li>
+<li><span class="ck">&#10003;</span>过放样品的测试后再充电步骤须定义并仪器化。</li>
+<li><span class="ck">&#10003;</span>在额定安全腔内执行，配远程观察与灭火。</li>
+</ul>
+
+
+          <h2>相关文章</h2>
+          <ul class="check-list">
+<li><span class="ck">&#10003;</span><a href="un-38-3-transport-testing-guide.html">UN 38.3 电池运输测试完整认证指南</a></li>
+<li><span class="ck">&#10003;</span><a href="../../news/battery-safety-testing-standards.html">电池安全测试标准对比：UL、IEC、GB 与 UN 38.3（英文）</a></li>
+<li><span class="ck">&#10003;</span><a href="../../news/choosing-battery-charge-discharge-tester.html">充放电测试系统选购：7个关键参数（英文）</a></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section soft">
+      <div class="container">
+        <div class="cta-band reveal">
+          <div>
+            <h2>需要为电池检测实验室选型？</h2>
+            <p>告诉我们您的测试需求——我们免费提供设备配置建议。</p>
+          </div>
+          <a href="../../contact.html" class="btn btn-light">联系我们 &rarr;</a>
+        </div>
+      </div>
+    </section>
+  </main>
+<footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="../../index.html" class="brand" aria-label="VoltTest 首页">
+            <span class="brand-mark" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 64 64" fill="none"><path d="M36 8L18 38h12l-4 18 20-32H34z" fill="#fff"/></svg>
+            </span>
+            <span class="brand-text">Volt<strong>Test</strong></span>
+          </a>
+          <p class="f-blurb">专业电池检测设备制造商。精密充放电测试系统、安全试验箱与化成分容系统，服务全球储能产业。</p>
+          <div class="social-row">
+            <a class="social-btn" href="#" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.2 8.2h4.6V23H.2V8.2zM8.2 8.2h4.4v2h.06c.61-1.16 2.1-2.38 4.33-2.38 4.63 0 5.49 3.05 5.49 7.01V23h-4.6v-7.2c0-1.72-.03-3.93-2.4-3.93-2.4 0-2.77 1.87-2.77 3.8V23H8.2V8.2z"/></svg></a>
+            <a class="social-btn" href="#" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-5.8zM9.6 15.6V8.4L15.8 12l-6.2 3.6z"/></svg></a>
+            <a class="social-btn" href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.89v2.26h3.32l-.53 3.49h-2.79V24C19.61 23.1 24 18.1 24 12.07z"/></svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>快速导航</h4>
+          <a href="../../index.html">首页</a>
+          <a href="../../products.html">产品中心</a>
+          <a href="../../solutions.html">解决方案</a>
+          <a href="../../about.html">关于我们</a>
+          <a href="../news.html">新闻与博客</a>
+          <a href="../../contact.html">联系我们</a>
+          <a href="../../quote.html">获取报价</a>
+        </div>
+        <div class="footer-col">
+          <h4>产品中心</h4>
+          <a href="../../products/environment-test-chamber/">环境试验箱</a>
+          <a href="../../products/safety-reliability-test-chamber/">安全可靠性试验设备</a>
+          <a href="../../products/electrical-safety-tester/">电气安全测试仪</a>
+          <a href="../../products/safety-regulations-test-chamber/">安规认证试验设备</a>
+          <a href="../../products/large-capacity-battery-test-chamber/">大容量电池试验设备</a>
+          <a href="../../products/customized-non-standard-battery-test-equipment/">定制非标设备</a>
+        </div>
+        <div class="footer-col">
+          <h4>联系方式</h4>
+          <ul class="footer-contact">
+            <li><span class="fc-icon">✉</span><span>peter@btchamber.com</span></li>
+            <li><span class="fc-icon"><a href="https://wa.me/8613532762231" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;">☏</a></span><span><a href="https://wa.me/8613532762231" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;">+86 13532762231 (WhatsApp)</a></span></li>
+            <li><span class="fc-icon">⌖</span><span>广东省深圳市高科技工业园A3栋</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span id="year">2026</span> VoltTest Technology Co., Ltd. 保留所有权利。</span>
+        <span>电池检测设备 · 电池测试系统 · OEM/ODM</span>
+      </div>
+    </div>
+  </footer>  <a href="https://wa.me/8613532762231" target="_blank" rel="noopener noreferrer" id="whatsappFloat" aria-label="WhatsApp 联系我们">
+    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M16.004 0C7.164 0 .004 7.16.004 15.996c0 2.812.736 5.564 2.14 7.988L.016 32l8.188-2.124c2.364 1.288 5.044 1.968 7.8 1.968 8.836 0 15.996-7.16 15.996-15.996S24.84 0 16.004 0zm0 29.28c-2.48 0-4.912-.648-7.06-1.876l-5.46 1.416 1.452-5.308c-1.468-2.36-2.244-5.092-2.244-7.924 0-6.628 5.392-12.02 12.02-12.02 6.624 0 12.016 5.392 12.016 12.02 0 6.628-5.392 12.004-12.004 12.004zm5.06-3.908c.336-.136 1.92-.728 2.196-1.288.276-.56.276-1.036.192-1.136-.084-.1-.308-.16-.644-.296-.336-.136-1.988-.984-2.296-1.1-.308-.112-.532-.168-.756.168-.224.336-.868 1.104-1.064 1.332-.196.228-.392.252-.728.084-.336-.168-1.416-.524-2.696-1.672-.988-.896-1.652-2.004-1.844-2.34-.192-.336-.02-.516.148-.684.152-.152.336-.392.504-.588.168-.196.224-.336.336-.56.112-.224.056-.42-.028-.588-.084-.168-.756-1.824-1.036-2.496-.272-.652-.548-.564-.756-.576-.196-.012-.42-.016-.644-.016-.224 0-.588.084-.896.42-.308.336-1.176 1.148-1.176 2.804s1.204 3.26 1.372 3.484c.168.224 2.368 3.616 5.732 5.072.8.348 1.424.556 1.908.712.8.28 1.528.24 2.104.144.64-.104 1.92-.784 2.192-1.544.272-.76.272-1.412.192-1.548-.084-.14-.308-.224-.644-.392z"/></svg>
+  </a>
+  <button id="backTop" aria-label="返回顶部">↑</button>
+
+  <script src="../../js/main.min.js"></script>
+</body>
+</html>
