@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /quote.html
 
 # Limit AI training crawlers (save bandwidth)
 User-agent: GPTBot
