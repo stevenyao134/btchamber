@@ -54,35 +54,58 @@
   ]
 }
   </script>
+
+  <meta name="theme-color" content="#1E6EF7">
+  <meta name="msvalidate.01" content="971027AB10C39CCC3082536328CADF3E">
+  <link rel="manifest" href="../../manifest.json">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
+  "@type": "FAQPage",
+  "mainEntity": [
     {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://www.btchamber.com/"
+      "@type": "Question",
+      "name": "Why is the hi-pot dwell fixed at 60 seconds?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because the standard says so. GB 38031 specifies a withstanding voltage test at 2U + 1000 V AC, where U is the maximum working voltage, applied for 60 s without breakdown or flashover. Shortening the dwell changes the test and invalidates the certificate. If takt is tight, the answer is a second bay, not a shorter test."
+      }
     },
     {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Solutions",
-      "item": "https://www.btchamber.com/solutions.html"
+      "@type": "Question",
+      "name": "What is the pass criterion for insulation resistance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GB 38031 requires at least 100 &Omega;/V referenced to the pack's maximum working voltage, so an 800 V pack must exceed 80 k&Omega;. Many OEM specifications demand 500 &Omega;/V or a flat megohm threshold, which is stricter. Set the limit from the customer specification, and record the measured value rather than only pass or fail &mdash; trend data is what predicts a process drifting."
+      }
     },
     {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Pack End-of-Line Testing",
-      "item": "https://www.btchamber.com/solutions/battery-pack-eol-testing/"
+      "@type": "Question",
+      "name": "How can EOL takt be reduced without losing coverage?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Parallelise the slow dielectric stage, move the functional charge to a separate soak bay, and prepare the BMS session while the pack is still indexing into position. Do not merge hi-pot with insulation into a single shortened step, and do not skip ground bond &mdash; both are the cheapest tests on the line and the most expensive to lose."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the EOL area need climate control?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It needs a stable ambient because insulation resistance falls as humidity rises, and a borderline pack will pass in winter and fail in summer. Holding the EOL bay at 23 &plusmn; 3 &deg;C and below 60 % RH removes a seasonal false-failure pattern that is otherwise very hard to diagnose from the data."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens to packs that fail EOL?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "They are quarantined with the failing gate and raw measurement attached, not just a fail flag. That record is what lets the process engineer decide between rework, retest after drying, or scrap. Packs that fail insulation after a humidity excursion are usually recoverable by drying; packs that fail hi-pot are not, because the defect is in the insulation barrier itself."
+      }
     }
   ]
 }
   </script>
-  <meta name="theme-color" content="#1E6EF7">
-  <meta name="msvalidate.01" content="971027AB10C39CCC3082536328CADF3E">
-  <link rel="manifest" href="../../manifest.json">
 </head>
 <body>
 
@@ -216,6 +239,73 @@
           <div class="stat reveal"><div class="stat-num" style="color:var(--ink);"><span data-count="10" data-suffix=" min">0</span></div><div class="stat-label" style="color:var(--slate);">Typical EOL cycle time</div></div>
           <div class="stat reveal"><div class="stat-num" style="color:var(--ink);"><span data-count="100" data-suffix="%">0</span></div><div class="stat-label" style="color:var(--slate);">Packs with digital test records</div></div>
           <div class="stat reveal"><div class="stat-num" style="color:var(--ink);"><span data-count="1" data-suffix=" bench">0</span></div><div class="stat-label" style="color:var(--slate);">Integrated EOL station per line</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Sequence Design</span>
+          <h2 class="h2">What Each EOL Step Catches, and Why It Cannot Be Skipped</h2>
+        </div>
+        <div class="reveal" style="max-width:880px;margin:0 auto 34px;">
+            <p class="lead" style="margin:0 0 18px;">An EOL station is a sequence of gates, and each gate exists because it catches a failure the others cannot see. Reordering them, or dropping one to save takt, moves the defect downstream &mdash; where it costs a pack instead of a part.</p>
+            <ul class="check-list">
+              <li><span class="ck">&#10003;</span> Dielectric tests must follow assembly and precede any charge, because a wet or contaminated pack fails differently once energised</li>
+              <li><span class="ck">&#10003;</span> Ground bond is checked separately from hi-pot: a bonded enclosure can still sit on a painted surface</li>
+              <li><span class="ck">&#10003;</span> BMS communication is verified before functional charge so a dead node does not look like a charger fault</li>
+              <li><span class="ck">&#10003;</span> Every result is bound to the pack serial number at the moment of measurement, not reconstructed afterwards</li>
+            </ul>
+        </div>
+        <div class="table-scroll reveal">
+              <table class="spec-table">
+                <thead>
+                  <tr><th>EOL gate</th><th>Failure it catches</th><th>Typical duration</th></tr>
+                </thead>
+                <tbody>
+              <tr><td>Visual and polarity</td><td>Reversed terminal, damaged housing</td><td>10&ndash;20&nbsp;s</td></tr>
+              <tr><td>Insulation resistance</td><td>Moisture, contamination, creepage fault</td><td>30&ndash;60&nbsp;s at 500&nbsp;V DC</td></tr>
+              <tr><td>Withstanding voltage</td><td>Insulation breakdown under stress</td><td>60&nbsp;s at 2U + 1000&nbsp;V AC</td></tr>
+              <tr><td>Ground bond</td><td>Bonding resistance of enclosure</td><td>5&ndash;10&nbsp;s at 25&nbsp;A</td></tr>
+              <tr><td>BMS communication</td><td>Missing node, firmware mismatch, CAN error</td><td>30&ndash;90&nbsp;s</td></tr>
+              <tr><td>OCV / ACIR scan</td><td>Cell imbalance, weld resistance drift</td><td>5&ndash;15&nbsp;s</td></tr>
+              <tr><td>Functional charge / discharge</td><td>Contactor, pre-charge, current sensor fault</td><td>2&ndash;10&nbsp;min</td></tr>
+              <tr><td>Data binding and label</td><td>Traceability gap</td><td>2&ndash;5&nbsp;s</td></tr>
+                </tbody>
+              </table>
+        </div>
+        <p style="text-align:center;color:var(--slate); font-size:.82rem; margin-top:16px;">Durations assume a single bay and a pack up to 800&nbsp;V. For takt below three minutes per pack, dielectric and functional stages are usually split into parallel bays rather than shortened.</p>
+      </div>
+    </section>
+
+    <section class="section soft" id="faq">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">FAQ</span>
+          <h2 class="h2">Frequently Asked Questions</h2>
+        </div>
+        <div class="faq-list reveal">
+          <details class="faq-item">
+            <summary>Why is the hi-pot dwell fixed at 60 seconds?</summary>
+            <p>Because the standard says so. GB 38031 specifies a withstanding voltage test at 2U + 1000 V AC, where U is the maximum working voltage, applied for 60 s without breakdown or flashover. Shortening the dwell changes the test and invalidates the certificate. If takt is tight, the answer is a second bay, not a shorter test.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What is the pass criterion for insulation resistance?</summary>
+            <p>GB 38031 requires at least 100 &Omega;/V referenced to the pack's maximum working voltage, so an 800 V pack must exceed 80 k&Omega;. Many OEM specifications demand 500 &Omega;/V or a flat megohm threshold, which is stricter. Set the limit from the customer specification, and record the measured value rather than only pass or fail &mdash; trend data is what predicts a process drifting.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How can EOL takt be reduced without losing coverage?</summary>
+            <p>Parallelise the slow dielectric stage, move the functional charge to a separate soak bay, and prepare the BMS session while the pack is still indexing into position. Do not merge hi-pot with insulation into a single shortened step, and do not skip ground bond &mdash; both are the cheapest tests on the line and the most expensive to lose.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Does the EOL area need climate control?</summary>
+            <p>It needs a stable ambient because insulation resistance falls as humidity rises, and a borderline pack will pass in winter and fail in summer. Holding the EOL bay at 23 &plusmn; 3 &deg;C and below 60 % RH removes a seasonal false-failure pattern that is otherwise very hard to diagnose from the data.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What happens to packs that fail EOL?</summary>
+            <p>They are quarantined with the failing gate and raw measurement attached, not just a fail flag. That record is what lets the process engineer decide between rework, retest after drying, or scrap. Packs that fail insulation after a humidity excursion are usually recoverable by drying; packs that fail hi-pot are not, because the defect is in the insulation barrier itself.</p>
+          </details>
         </div>
       </div>
     </section>

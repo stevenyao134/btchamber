@@ -54,35 +54,58 @@
   ]
 }
   </script>
+
+  <meta name="theme-color" content="#1E6EF7">
+  <meta name="msvalidate.01" content="971027AB10C39CCC3082536328CADF3E">
+  <link rel="manifest" href="../../manifest.json">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
+  "@type": "FAQPage",
+  "mainEntity": [
     {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://www.btchamber.com/"
+      "@type": "Question",
+      "name": "How many formation channels do I actually need?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Multiply daily cell output by the formation recipe duration in hours, divide by 24, then divide by realistic uptime of about 90 %. A plant making 2,000 cells per day on a 24 h recipe therefore needs roughly 2,200 channels. Adding a second formation cycle for high-energy cells doubles that figure, which is why the recipe has to be fixed before the equipment is ordered."
+      }
     },
     {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Solutions",
-      "item": "https://www.btchamber.com/solutions.html"
+      "@type": "Question",
+      "name": "What temperature uniformity does formation require?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "&plusmn;2 &deg;C across the tray is the working target for consistent SEI formation; tighter is better but costs airflow and energy. The practical test is a loaded tray, not an empty chamber, because cells packed at 5 mm spacing block the air path. VoltTest validates uniformity with trays at production density rather than quoting an empty-chamber figure."
+      }
     },
     {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Lithium Battery Testing",
-      "item": "https://www.btchamber.com/solutions/lithium-battery-testing/"
+      "@type": "Question",
+      "name": "How is self-discharge measured in production?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Measure OCV after formation, hold the cell at a controlled temperature for seven days, then measure again. The slope &mdash; K value in mV per day &mdash; separates genuine cells from those with a soft short. Two-point checks over 24 h are faster but miss slow leaks, so most factories run a 7-day sample audit alongside 100 % short-interval OCV screening."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can one system handle both formation and grading?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, if the channels are specified with bidirectional capability and the software carries the cell record across both stages. The constraint is throughput: formation runs for a full recipe while grading is a short discharge, so sharing channels leaves them idle during grading. Many plants run formation and grading in the same cabinet but schedule them as separate passes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What changes between LFP and NMC grading?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "LFP has a flat voltage plateau, so capacity grading by voltage window is unreliable &mdash; it needs coulomb counting and a tighter current accuracy. NMC grades well on voltage but is more sensitive to temperature during formation. In both cases the sort limits come from the cell specification, not from a generic rule, and the equipment must be able to apply per-bin limits."
+      }
     }
   ]
 }
   </script>
-  <meta name="theme-color" content="#1E6EF7">
-  <meta name="msvalidate.01" content="971027AB10C39CCC3082536328CADF3E">
-  <link rel="manifest" href="../../manifest.json">
 </head>
 <body>
 
@@ -215,6 +238,70 @@
           <div class="stat reveal"><div class="stat-num" style="color:var(--ink);"><span data-count="1024" data-suffix="ch">0</span></div><div class="stat-label" style="color:var(--slate);">Max channels per system</div></div>
           <div class="stat reveal"><div class="stat-num" style="color:var(--ink);"><span data-count="90" data-suffix="%">0</span></div><div class="stat-label" style="color:var(--slate);">Discharge energy recovered</div></div>
           <div class="stat reveal"><div class="stat-num" style="color:var(--ink);"><span data-count="0.05" data-suffix="%">0</span></div><div class="stat-label" style="color:var(--slate);">FS measurement accuracy</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Capacity Planning</span>
+          <h2 class="h2">Formation Planning Starts With Channels, Not Cabinets</h2>
+        </div>
+        <div class="reveal" style="max-width:880px;margin:0 auto 34px;">
+            <p class="lead" style="margin:0 0 18px;">Formation capacity is a channel-count problem. A cell occupies a channel for the whole formation recipe, so the number that matters is cells per day multiplied by recipe hours, divided by 24 and by realistic uptime &mdash; not the number of cabinets on the floor.</p>
+            <ul class="check-list">
+              <li><span class="ck">&#10003;</span> A 24&nbsp;h recipe on 2,000 cells per day needs roughly 2,200 channels once 90&nbsp;% uptime is allowed for</li>
+              <li><span class="ck">&#10003;</span> Energy recovery returns 60&ndash;80&nbsp;% of discharge energy; on a multi-megawatt line that sets the payback period</li>
+              <li><span class="ck">&#10003;</span> Temperature uniformity across the tray drives SEI quality &mdash; a 3&nbsp;&deg;C gradient shifts graded capacity by about 1&nbsp;%</li>
+              <li><span class="ck">&#10003;</span> Grading needs three parameters, not one: capacity alone lets high self-discharge cells through</li>
+            </ul>
+        </div>
+        <div class="table-scroll reveal">
+              <table class="spec-table">
+                <thead>
+                  <tr><th>Parameter</th><th>Method</th><th>Typical spec</th><th>What it screens</th></tr>
+                </thead>
+                <tbody>
+              <tr><td>Capacity</td><td>0.33C CC-CV discharge</td><td>&plusmn;0.5&nbsp;% repeatability</td><td>Grading bin assignment</td></tr>
+              <tr><td>ACIR</td><td>1&nbsp;kHz AC, four-wire</td><td>&plusmn;2&nbsp;%</td><td>Power capability, weld quality</td></tr>
+              <tr><td>DCIR</td><td>10&nbsp;s pulse at 1C</td><td>&plusmn;2&nbsp;%</td><td>BMS model calibration</td></tr>
+              <tr><td>Self-discharge K</td><td>&Delta;OCV over 7 days</td><td>&lt;2&nbsp;mV/day</td><td>Micro-short and soft short screening</td></tr>
+              <tr><td>Coulombic efficiency</td><td>First cycle</td><td>&gt;99.5&nbsp;%</td><td>SEI formation quality</td></tr>
+                </tbody>
+              </table>
+        </div>
+        <p style="text-align:center;color:var(--slate); font-size:.82rem; margin-top:16px;">Specifications are typical for LFP and NMC cells in the 50&ndash;300&nbsp;Ah range. Coin and small cylindrical cells use different current ranges &mdash; tell us the format and we will size the channels.</p>
+      </div>
+    </section>
+
+    <section class="section soft" id="faq">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">FAQ</span>
+          <h2 class="h2">Frequently Asked Questions</h2>
+        </div>
+        <div class="faq-list reveal">
+          <details class="faq-item">
+            <summary>How many formation channels do I actually need?</summary>
+            <p>Multiply daily cell output by the formation recipe duration in hours, divide by 24, then divide by realistic uptime of about 90 %. A plant making 2,000 cells per day on a 24 h recipe therefore needs roughly 2,200 channels. Adding a second formation cycle for high-energy cells doubles that figure, which is why the recipe has to be fixed before the equipment is ordered.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What temperature uniformity does formation require?</summary>
+            <p>&plusmn;2 &deg;C across the tray is the working target for consistent SEI formation; tighter is better but costs airflow and energy. The practical test is a loaded tray, not an empty chamber, because cells packed at 5 mm spacing block the air path. VoltTest validates uniformity with trays at production density rather than quoting an empty-chamber figure.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How is self-discharge measured in production?</summary>
+            <p>Measure OCV after formation, hold the cell at a controlled temperature for seven days, then measure again. The slope &mdash; K value in mV per day &mdash; separates genuine cells from those with a soft short. Two-point checks over 24 h are faster but miss slow leaks, so most factories run a 7-day sample audit alongside 100 % short-interval OCV screening.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Can one system handle both formation and grading?</summary>
+            <p>Yes, if the channels are specified with bidirectional capability and the software carries the cell record across both stages. The constraint is throughput: formation runs for a full recipe while grading is a short discharge, so sharing channels leaves them idle during grading. Many plants run formation and grading in the same cabinet but schedule them as separate passes.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What changes between LFP and NMC grading?</summary>
+            <p>LFP has a flat voltage plateau, so capacity grading by voltage window is unreliable &mdash; it needs coulomb counting and a tighter current accuracy. NMC grades well on voltage but is more sensitive to temperature during formation. In both cases the sort limits come from the cell specification, not from a generic rule, and the equipment must be able to apply per-bin limits.</p>
+          </details>
         </div>
       </div>
     </section>

@@ -54,35 +54,58 @@
   ]
 }
   </script>
+
+  <meta name="theme-color" content="#1E6EF7">
+  <meta name="msvalidate.01" content="971027AB10C39CCC3082536328CADF3E">
+  <link rel="manifest" href="../../manifest.json">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
+  "@type": "FAQPage",
+  "mainEntity": [
     {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://www.btchamber.com/"
+      "@type": "Question",
+      "name": "Which standards govern EV pack end-of-line testing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GB 38031-2020 sets the insulation resistance requirement at 100 &Omega;/V minimum and the withstanding voltage test at 2U + 1000 V AC for 60 s, where U is the maximum working voltage. IEC 62619 and ISO 12405 apply to module and system level endurance, and UN 38.3 governs the transport test that a finished pack must pass before shipment. Most OEMs add their own EOL specification on top, usually stricter than the national standard."
+      }
     },
     {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Solutions",
-      "item": "https://www.btchamber.com/solutions.html"
+      "@type": "Question",
+      "name": "Can one EOL bench handle both 400 V and 800 V packs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, provided the bench is specified for the higher voltage from the start. That means 1000 V-rated contactors, test leads and connectors, adequate creepage and clearance inside the fixture, and an interlocked HV enclosure. Switching ranges in software is trivial; upgrading insulation hardware afterwards is not."
+      }
     },
     {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "EV Battery Test Solutions",
-      "item": "https://www.btchamber.com/solutions/ev-battery-testing/"
+      "@type": "Question",
+      "name": "How is BMS communication verified at EOL?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The bench runs a CAN or CAN-FD matrix against the pack: node presence, message cycle times, plausibility of cell voltage and temperature broadcasts, and response to simulated fault conditions. Software loads the OEM DBC file, so a firmware change is a configuration update rather than a bench rebuild. Failed handshakes are logged with the raw frames, which is what makes warranty disputes resolvable."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do module cycling benches need thermal chambers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on the clause you are testing. Capacity and DCIR checks at 25 &deg;C need &plusmn;2 &deg;C stability, which a conditioned room can hold. Cycle-life and power-fade tests across temperature need a chamber, because the cell self-heats and the module gradient drives imbalance. Thermal propagation and over-temperature tests belong in a safety chamber with venting and suppression, not a standard climate unit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is traceability maintained from cell to finished pack?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every station writes to a common key rather than its own local database. The pack serial number is bound to the module IDs, the cell batch, and each measurement with its timestamp and instrument calibration ID. Export is MES-ready CSV or a direct API, so a field failure can be traced back to the formation channel that produced the cell."
+      }
     }
   ]
 }
   </script>
-  <meta name="theme-color" content="#1E6EF7">
-  <meta name="msvalidate.01" content="971027AB10C39CCC3082536328CADF3E">
-  <link rel="manifest" href="../../manifest.json">
 </head>
 <body>
 
@@ -215,6 +238,71 @@
           <div class="stat reveal"><div class="stat-num" style="color:var(--ink);"><span data-count="100" data-suffix="%">0</span></div><div class="stat-label" style="color:var(--slate);">Cell QC coverage on line</div></div>
           <div class="stat reveal"><div class="stat-num" style="color:var(--ink);"><span data-count="15" data-suffix="+">0</span></div><div class="stat-label" style="color:var(--slate);">EV battery plants equipped</div></div>
           <div class="stat reveal"><div class="stat-num" style="color:var(--ink);"><span data-count="30" data-suffix="%">0</span></div><div class="stat-label" style="color:var(--slate);">Lower test energy cost (recovery)</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Throughput Engineering</span>
+          <h2 class="h2">Specifying a Line That Keeps Up With Takt Time</h2>
+        </div>
+        <div class="reveal" style="max-width:880px;margin:0 auto 34px;">
+            <p class="lead" style="margin:0 0 18px;">Most EV test lines are not limited by instrument accuracy &mdash; they are limited by the slowest gate in the sequence. Before quoting equipment we calculate the cycle time of every station against your target packs per hour, then decide where to parallelise.</p>
+            <ul class="check-list">
+              <li><span class="ck">&#10003;</span> Pack EOL is dominated by dielectric tests: insulation plus hi-pot dwell cannot be shortened without leaving the standard</li>
+              <li><span class="ck">&#10003;</span> BMS wake-up and CAN handshake add 30&ndash;90&nbsp;s per pack, and fail repeatedly on firmware still in validation</li>
+              <li><span class="ck">&#10003;</span> Module cycling throughput is set by chamber volume and airflow, not by channel count</li>
+              <li><span class="ck">&#10003;</span> 800&nbsp;V architectures need 1000&nbsp;V-rated fixtures, creepage distance and interlocked HV covers &mdash; cheaper to specify now than retrofit</li>
+            </ul>
+        </div>
+        <div class="table-scroll reveal">
+              <table class="spec-table">
+                <thead>
+                  <tr><th>Station</th><th>Typical cycle time</th><th>What sets the limit</th></tr>
+                </thead>
+                <tbody>
+              <tr><td>Cell formation</td><td>12&ndash;24&nbsp;h</td><td>Channel count &times; formation recipe</td></tr>
+              <tr><td>Cell OCV / ACIR sort</td><td>3&ndash;6&nbsp;s per cell</td><td>Sorter contact resistance and indexing</td></tr>
+              <tr><td>Module cycling</td><td>4&ndash;12&nbsp;h per profile</td><td>Chamber airflow and &Delta;T across the module</td></tr>
+              <tr><td>Pack EOL &mdash; dielectric</td><td>3&ndash;5&nbsp;min</td><td>Insulation soak plus hi-pot dwell</td></tr>
+              <tr><td>Pack EOL &mdash; BMS</td><td>30&ndash;90&nbsp;s</td><td>CAN matrix readiness, node wake time</td></tr>
+              <tr><td>Final charge / SoC set</td><td>20&ndash;60&nbsp;min</td><td>Charger power per bay</td></tr>
+                </tbody>
+              </table>
+        </div>
+        <p style="text-align:center;color:var(--slate); font-size:.82rem; margin-top:16px;">Cycle times are for a 60&ndash;80&nbsp;kWh pack unless stated. Send us your takt target and pack format and we will return a station-by-station capacity calculation.</p>
+      </div>
+    </section>
+
+    <section class="section soft" id="faq">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">FAQ</span>
+          <h2 class="h2">Frequently Asked Questions</h2>
+        </div>
+        <div class="faq-list reveal">
+          <details class="faq-item">
+            <summary>Which standards govern EV pack end-of-line testing?</summary>
+            <p>GB 38031-2020 sets the insulation resistance requirement at 100 &Omega;/V minimum and the withstanding voltage test at 2U + 1000 V AC for 60 s, where U is the maximum working voltage. IEC 62619 and ISO 12405 apply to module and system level endurance, and UN 38.3 governs the transport test that a finished pack must pass before shipment. Most OEMs add their own EOL specification on top, usually stricter than the national standard.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Can one EOL bench handle both 400 V and 800 V packs?</summary>
+            <p>Yes, provided the bench is specified for the higher voltage from the start. That means 1000 V-rated contactors, test leads and connectors, adequate creepage and clearance inside the fixture, and an interlocked HV enclosure. Switching ranges in software is trivial; upgrading insulation hardware afterwards is not.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How is BMS communication verified at EOL?</summary>
+            <p>The bench runs a CAN or CAN-FD matrix against the pack: node presence, message cycle times, plausibility of cell voltage and temperature broadcasts, and response to simulated fault conditions. Software loads the OEM DBC file, so a firmware change is a configuration update rather than a bench rebuild. Failed handshakes are logged with the raw frames, which is what makes warranty disputes resolvable.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Do module cycling benches need thermal chambers?</summary>
+            <p>It depends on the clause you are testing. Capacity and DCIR checks at 25 &deg;C need &plusmn;2 &deg;C stability, which a conditioned room can hold. Cycle-life and power-fade tests across temperature need a chamber, because the cell self-heats and the module gradient drives imbalance. Thermal propagation and over-temperature tests belong in a safety chamber with venting and suppression, not a standard climate unit.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How is traceability maintained from cell to finished pack?</summary>
+            <p>Every station writes to a common key rather than its own local database. The pack serial number is bound to the module IDs, the cell batch, and each measurement with its timestamp and instrument calibration ID. Export is MES-ready CSV or a direct API, so a field failure can be traced back to the formation channel that produced the cell.</p>
+          </details>
         </div>
       </div>
     </section>
